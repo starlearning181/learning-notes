@@ -82,7 +82,7 @@ print(A.mean())           # tensor(9.5)   ← mean = 平均值，190/20
 print(A.mean(dim=0))      # tensor([ 8.,  9., 10., 11.])   ← 每列的平均
 
 # 【保持维度】keepdims=True = 压扁之后别把轴删掉，留个"1"占位。
-sum_A = A.sum(dim=1, keepdims=True)
+sum_A = A.sum(dim=1,keepdim=True)
 print(sum_A.shape)        # torch.Size([5, 1])  ← 不是 (5,)，是 (5,1) 的表格
 print(A / sum_A)          # 每一行除以自己那行的和 → 每行加起来 = 1
 # 这个技巧叫"归一化"，第 3 章 softmax、注意力机制里都会见到，
